@@ -66,22 +66,42 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     transform = <&default_transform>;
 };
 
-&pro_micro_i2c {
-    status = "okay";
+#&pro_micro_i2c {
+#    status = "okay";
+#
+#    oled: ssd1306@3c {
+#        compatible = "solomon,ssd1306fb";
+#        reg = <0x3c>;
+#        width = <160>;
+#        height = <68>;
+#        segment-offset = <0>;
+#        page-offset = <0>;
+#        display-offset = <0>;
+#        multiplex-ratio = <31>;
+#        segment-remap;
+#        com-invdir;
+#        com-sequential;
+#        inversion-on;
+#        prechargep = <0x22>;
+#    };
+#};
 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <160>;
-        height = <68>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
+&nice_view_spi {
+    status = "okay";
+    cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+    dc-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+    reset-gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
+    busy-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+    spi-max-frequency = <1000000>;
+};
+
+&display {
+    compatible = "zmk,nice-view";
+    spi-max-frequency = <1000000>;
+    dc-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+    reset-gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
+    busy-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+    width = <160>;
+    height = <68>;
+    rotation = <0>;
 };
