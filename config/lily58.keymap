@@ -14,7 +14,7 @@
         language_switch: language_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LEFT_WIN &kp SPACE>;
+            bindings = <&d LGUI &kp SPACE &u LGUI>;
             label = "LANGUAGE_SWITCH";
         };
     };
