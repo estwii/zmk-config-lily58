@@ -229,11 +229,11 @@ const lv_img_dsc_t mountain = {
 };
 
 
-#ifndef LV_ATTRIBUTE_IMG_C - KOPIE
-#define LV_ATTRIBUTE_IMG_C - KOPIE
+#ifndef LV_ATTRIBUTE_IMG_LUFFY
+#define LV_ATTRIBUTE_IMG_LUFFY
 #endif
 
-const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_C - KOPIE uint8_t C - Kopie_map[] = {
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_LUFFY uint8_t luffy_map[] = {
   0x09, 0x09, 0x09, 0x05, 	/*Color of index 0*/
   0x74, 0x74, 0x74, 0xfc, 	/*Color of index 1*/
 
@@ -307,12 +307,12 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_C - KOPIE
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t C - Kopie = {
+const lv_img_dsc_t luffy = {
   .header.cf = LV_IMG_CF_INDEXED_1BIT,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
-  .data = C - Kopie_map,
+  .data = luffy_map,
 };
